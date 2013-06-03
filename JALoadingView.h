@@ -9,7 +9,7 @@
 
 @interface JALoadingView : UIView
 
-@property (nonatomic) UIActivityIndicatorView *indicator;
+@property (nonatomic, retain) UIActivityIndicatorView *indicator;
 
 + (void)stopAnimating;
 + (void)startAnimating;
