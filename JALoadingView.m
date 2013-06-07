@@ -53,7 +53,7 @@ static CGFloat side = 40;
     JALoadingView *view = [JALoadingView shared];
     UIView *parentView = [self containerView];
     [parentView addSubview:view];
-    view.center = parentView.center;
+    view.center = CGPointMake(parentView.bounds.size.width / 2,parentView.bounds.size.height / 2);
     [view.indicator startAnimating];
     [JALoadingView performSelector:@selector(stopAnimating) withObject:nil afterDelay:20];
 }
