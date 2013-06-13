@@ -59,11 +59,11 @@ static CGFloat side = 40;
 }
 
 + (void)stopAnimating {
-    [NSObject cancelPreviousPerformRequestsWithTarget:[JALoadingView shared]];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [[JALoadingView shared] removeFromSuperview];
-    BOOL isIgnoring = [[UIApplication sharedApplication] isIgnoringInteractionEvents];
-    if (isIgnoring)
-        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+    // Fix to be able to call stopAnimating more oftan than startAnimating
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 + (UIView*)containerView {
