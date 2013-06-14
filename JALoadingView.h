@@ -11,7 +11,12 @@
 
 @property (nonatomic, retain) UIActivityIndicatorView *indicator;
 
++ (JALoadingView *)shared;
 + (void)stopAnimating;
 + (void)startAnimating;
+
+- (void)stopAnimating;
+- (void)startAnimating;
+- (void)startAnimatingInView:(UIView *)parentView;
 
 @end
