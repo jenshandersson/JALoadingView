@@ -78,6 +78,10 @@ static CGFloat side = 40;
     return [[[[[UIApplication sharedApplication] delegate] window] rootViewController] view];
 }
 
+- (void)dealloc {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+}
+
 @end
 
 @implementation UIView (JALoadingView)
