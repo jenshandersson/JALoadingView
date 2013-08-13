@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JALoadingView"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "An easy to use loading indicator." \
 			"Simply run [JALoadingView startAnimating]."
   s.homepage     = "https://github.com/jenshandersson/JALoadingView"
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     LICENSE
   }
   s.author       = { "Jens Andersson" => "jens@fritan.com" }
-  s.source       = { :git => "https://github.com/jenshandersson/JALoadingView.git", :tag => "0.1.3" }
+  s.source       = { :git => "https://github.com/jenshandersson/JALoadingView.git", :tag => "0.1.4" }
   s.platform     = :ios
   s.source_files = 'JALoadingView.{h,m}'
   s.frameworks    = 'QuartzCore'
