@@ -79,3 +79,25 @@ static CGFloat side = 40;
 }
 
 @end
+
+@implementation UIView (JALoadingView)
+
+- (void)startLoadingWithStyle:(JALoadingViewStyle)style {
+    JALoadingView *loader = [JALoadingView new];
+    loader.backgroundColor = [UIColor clearColor];
+    
+    if (style == JALoadingViewStyleGrey)
+       loader.indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    else if (style == JALoadingViewStyleWhite)
+        loader.indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    [loader startAnimatingInView:self];
+}
+
+- (void)stopLoading {
+    for (UIView *subView in self.subviews) {
+        if ([subView isKindOfClass:[JALoadingView class]])
+            [subView removeFromSuperview];
+    }
+}
+
+@end

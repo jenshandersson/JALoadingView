@@ -7,6 +7,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, JALoadingViewStyle) {
+    // Gray background with white indicatio, default
+    JALoadingViewStyleWhiteGrayBackground,
+    // White indicator
+    JALoadingViewStyleWhite,
+    // Gray indicator
+    JALoadingViewStyleGrey
+};
+
 @interface JALoadingView : UIView
 
 @property (nonatomic, retain) UIActivityIndicatorView *indicator;
@@ -18,5 +27,12 @@
 - (void)stopAnimating;
 - (void)startAnimating;
 - (void)startAnimatingInView:(UIView *)parentView;
+
+@end
+
+@interface UIView (JALoadingView)
+
+- (void)startLoadingWithStyle:(JALoadingViewStyle)style;
+- (void)stopLoading;
 
 @end
