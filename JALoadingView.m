@@ -48,9 +48,11 @@ static CGFloat side = 40;
     
     return _shared;
 }
+
 + (void)startAnimating {
     [[JALoadingView shared] startAnimating];
 }
+
 + (void)stopAnimating {
     [[JALoadingView shared] stopAnimating];
 }
@@ -63,11 +65,9 @@ static CGFloat side = 40;
     [parentView addSubview:self];
     self.center = CGPointMake(parentView.bounds.size.width / 2,parentView.bounds.size.height / 2);
     [self.indicator startAnimating];
-    [self performSelector:@selector(stopAnimating) withObject:nil afterDelay:20];
 }
 
 - (void)stopAnimating {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self removeFromSuperview];
     // Fix to be able to call stopAnimating more oftan than startAnimating
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
@@ -76,10 +76,6 @@ static CGFloat side = 40;
 
 - (UIView*)containerView {
     return [[[[[UIApplication sharedApplication] delegate] window] rootViewController] view];
-}
-
-- (void)dealloc {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 @end
